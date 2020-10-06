@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/inpage.css') }}">
+    <title>Grape Lounge</title>
+    <script src="/main.js"></script>
+</head>
+<body>
+    <header>
+        <!-- 상단바 -->
+        <!-- 상단바 이미지 삽입 -->
+        <div class="img" id="header">
+            <div class="img-cover">
+                <div class="layout">
+                    <div class="logo c1">
+                        <img src="{{ url_for('static', filename = 'image/logo.png') }}" alt="그레이프라운지">
+                    </div>
+                    <!-- 맨 위 내비게이션 바 -->
+                    <header class="c2 menu">
+                        <nav>
+                            <ul>
+                                <li class="menu-item"><a href="{{ url_for('home') }}">Home</a></li>
+                                <li class="menu-item"><a href="{{ url_for('meetingroom') }}">회의실</a></li>
+                                <li class="menu-item"><a href="{{ url_for('reservation') }}">예약</a></li>
+                                <li class="menu-item" id="now"><a href="{{ url_for('sig_lounge') }}">입주사 전용 공간</a></li>
+                                <li class="menu-item"><a href="https://grapelounge.co.kr/">그레이프라운지</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                </div>
+                <!-- <div class="page_title">
+                    <title class="page_title">회의실</title>
+                </div> -->
+                <div class="page_title">
+                    <title>입주사 전용 공간</title>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="side-main_layout c1">
+        <!-- 사이드 메뉴 바 -->
+        <div class="sidebar nanumbarungothic">
+            <div class="sidebar_title">
+                입주사 전용 공간
+            </div>
+            <div>
+                <span><a href="{{ url_for('sig_lounge') }}">Lounge</a></span><br><br>
+                <span>Storage</span>
+            </div>
+        </div>
+    
+        <!-- 중앙 콘텐츠 -->
+        <main class="c2 nanumbarungothic">
+            <h1 class="r1" style="margin-bottom: 16px;">입주사 전용 Storage</h1>
+            <div class="service_subtitle" style="text-align: center;">
+                어깨를 가볍게! 무료로 이용하는 전용 창고
+            </div>
+
+            <div class="r3 room_img">
+                <img src="{{ url_for('static', filename = 'image/imagearea.png') }}" alt="">
+            </div>
+            <div class="r4 sig_discription">
+                <p>사무실에 두고 갈 수 없는 커다랗고 소중한 내 물건들... 
+                    하지만 보관이 필요하다면? 그레이프라운지 입주사 전용 Storage를 이용해보세요.<br><br>
+                    입주사 임직원들만 출입할 수 있도록 관리되고 있어 더욱 안심하고 사용하실 수 있습니다. 
+                    매일 가지고 다니기 귀찮았던 여벌 옷 및 개인 소지품 등 활용할 방법이 매우 많답니다! 
+                    스토리지 운영 정책을 반드시 확인해주세요.
+                </p>
+                <ul class='notice'>
+                    <li>스토리지 운영 정책</li>
+                </ul>
+                <ul class='notice' style='list-style-type: decimal; padding-left: 20px; margin-top: 24px'>
+                    <li>그레이프라운지 스토리지는 시그니쳐타워 입주사 직원(개인)을 대상으로 하며 선정된 신청자에 한하여 무상 제공합니다.</li>
+                    <li>스토리지 신청은 그레이프라운지 홈페이지에서 분기별 1회 신청자 접수를 받습니다. (일정은 변동될 수 있음)</li>
+                    <li>스토리지는 그레이프라운지에서 배정해드리며, 위치 변경은 불가한 점 양해 부탁드립니다.</li>
+                    <li>스토리지 배정 시 정보 확인을 위해 입주사 명, 직함, 부서 연락처 및 개인 연락처, 본인성함을 그레이프라운지 측에 제공하여야 합니다(본인 확인 외의 용도로 이용하지 않습니다.</li>
+                    <li>스토리지 공간의 용도는 이용자 개인의 의도에 따라 활용할 수 있습니다. 단, 상할 수 있는 음식물이나 악취를 유발하는 물품은 보관할 수 없습니다.</li>
+                    <li>보관된 물품의 관리는 그레이프라운지에서 책임지지 않지만, 도난 및 파손의 문제가 있을 경우 내부 CCTV 자료화면을 제공해드립니다.</li>
+                    <li>선정된 신청자는 등록기간 안에 스토리지를 배정받아야 하며 등록기한이 지났을 경우 다른 신청자에게 배정 기회가 주어집니다.</li>
+                    <li>이용기간 종료일 7일 전, 2일 전 2회 종료안내를 하며 종료일까지 보관물품을 수거하여야 합니다. 수거되지 않은 물품은 다음 이용자를 위해 그레이프라운지에서 임의 수거합니다. </li>
+                    <li>스토리지는 지정된 시간 안에 자유롭게 출입 가능하며 미운영 시에는 출입이 불가능합니다.</li>
+                </ul>
+            </div>
+            <div class="r5 stor_btn">
+                <img src="{{ url_for('static', filename = 'image/stor_btn.png') }}" alt="Storage 신청하러 가기">
+            </div>
+            
+        </main>
+    </div>
+
+
+
+</body>
+</html>

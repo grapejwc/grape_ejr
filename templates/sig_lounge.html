@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/inpage.css') }}">
+    <title>Grape Lounge</title>
+    <script src="/main.js"></script>
+</head>
+<body>
+    <header>
+        <!-- 상단바 -->
+        <!-- 상단바 이미지 삽입 -->
+        <div class="img" id="header">
+            <div class="img-cover">
+                <div class="layout">
+                    <div class="logo c1">
+                        <img src="{{ url_for('static', filename = 'image/logo.png') }}" alt="그레이프라운지">
+                    </div>
+                    <!-- 맨 위 내비게이션 바 -->
+                    <header class="c2 menu">
+                        <nav>
+                            <ul>
+                                <li class="menu-item"><a href="{{ url_for('home') }}">Home</a></li>
+                                <li class="menu-item"><a href="{{ url_for('meetingroom') }}">회의실</a></li>
+                                <li class="menu-item"><a href="{{ url_for('reservation') }}">예약</a></li>
+                                <li class="menu-item" id="now"><a href="{{ url_for('sig_lounge') }}">입주사 전용 공간</a></li>
+                                <li class="menu-item"><a href="https://grapelounge.co.kr/">그레이프라운지</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                </div>
+                <!-- <div class="page_title">
+                    <title class="page_title">회의실</title>
+                </div> -->
+                <div class="page_title">
+                    <title>입주사 전용 공간</title>
+                </div>
+            </div>
+    
+        </div>
+    </header>
+
+    <!-- 사이드 메뉴와 중앙 콘텐츠 -->
+    <div class="side-main_layout c1">
+        <!-- 사이드 메뉴 바 -->
+        <div class="sidebar nanumbarungothic">
+            <div class="sidebar_title">
+                입주사 전용 공간
+            </div>
+            <div>
+                <span>Lounge</span><br><br>
+                <span><a href="{{ url_for('sig_storage') }}">Storage</a></span>
+            </div>
+        </div>
+    
+        <!-- 중앙 콘텐츠 -->
+        <main class="c2 nanumbarungothic">
+            <h1 class="r1" style="margin-bottom: 16px;">입주사 전용 Lounge</h1>
+            <div class="service_subtitle" style="text-align: center;">
+                지친 업무 속의 작은 힐링 플레이스
+            </div>
+
+            <div class="r3 room_img">
+                <img src="{{ url_for('static', filename = 'image/imagearea.png') }}" alt="">
+            </div>
+            <div class="r4 sig_discription">
+                <p>
+                    짧은 시간이라도 편하고 쾌적한 곳에서 보내고 싶은 그 마음, 그레이프라운지는 모두 알고 있기에!
+                    입주사 임직원분들에게 Lounge를 오픈합니다.<br><br>
+                    문을 열고 들어와 가장 먼저 보이는 라운지 공간을 무료로, 편하게 이용하실 수 있습니다.<br><br>
+                    그레이프라운지는 좋은 음악, 편한 좌석, 눈이 즐거운 인테리어가 준비되어 있습니다.
+                    서적, 잡지, 신문 등을 즐기며 재충전의 시간을 보내보세요.
+                    시그니쳐타워 Mall에서 구입하신 음식과 음료는 반입 가능합니다. 
+                </p>
+                <ul class="notice">
+                    <li>입주사 임직원분들만 출입이 가능하며, 외부인은 입주사 분들과 동행하여야 합니다.</li>
+                    <li>외부 음료와 음식은 반입이 가능하지만 냄새를 유발하는 음식은 불가하며, 음식물쓰레기는 라운지 내부에서 처리할 수 없습니다.</li>
+                </ul>
+            </div>
+            
+        </main>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+.nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0; /* 초기화! */
+}
+
+header > .img {
+    position: relative;
+    background-image: url({{ url_for('static', filename = 'image/first_img3.jpg') }});
+    /* height: 960px; */
+    height: 100vh;
+    /* width: 100vw; */
+    background-size: cover;
+    z-index: 1;
+}
+
+#header{
+    height: 260px;
+    width: 100%;
+}
+
+header .img-cover {
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+header{
+    margin: -10px;
+}
+.img-cover {
+    position: absolute;
+    background-color: rgba(35, 24, 21, 0.5);
+    z-index: 2;
+}
+
+.mr_img1 .img-cover:hover{
+    background-color: rgba(21, 21, 21, 0.8);
+    transition: 0.2s ease-in-out;
+}
+
+nav {
+    color: white;
+}
+
+header ul{
+    display: block;
+    float: right;
+}
+
+.menu {
+    display: block;
+    float: right;
+    margin-top: 40px;
+    margin-right: 120px;
+}
+
+main{
+}
+
+li.menu-item{
+    list-style: none;
+    display: inline;
+    padding: 20px;
+    font-size: 20px;
+    z-index: 3;
+    color: white;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar{
+    width: 300px;
+    /* height: ; */
+    border-right: 1px solid rgb(196, 196, 196);
+    border-top: 1px solid white;
+    margin-left: -10px;
+    margin-top: 9px;
+}
+
+.sidebar > div {
+    margin-left: 120px;
+    margin-bottom: 48px;
+}
+
+.sidebar span {
+    font-size: 20px;
+}
+
+.sidebar_title {
+    border-top: 2px solid black;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-top: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.side_item{
+    list-style: square;
+    margin: 20px 0px;
+    font-weight: lighter;
+}
+
+.page_title{
+}
+
+.page_title > title {
+    display: block;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+#now {
+    font-weight: bold;
+}
+
+.firstPage {
+    margin: -10px;
+    width: auto;
+}
+
+.logo {
+    display: block;
+    float: left;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+.logo > img{
+    width: 240px;
+
+}
+
+.mainlogo {
+    width: 60vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40vh;
+}
+
+.mainlogo>span{
+    color: white;
+    float: right;
+    font-size: 3vw;
+    font-family: 'NanumBarunGothic';
+    font-weight: 500;
+}
+
+.c1{grid-column: 1/2;}
+.c2{grid-column: 2/3;}
+.c3{grid-column: 3/4;}
+.c4{grid-column: 4/5;}
+
+.c1_3{grid-column: 1/3;}
+.c2_4{grid-column: 2/4;}
+
+.r1{grid-row: 1/2;}
+.r2{grid-row: 2/3;}
+.r3{grid-row: 3/4;}
+.r4{grid-row: 4/5;}
+.r5{grid-row: 5/6;}
+.r1_3{grid-row: 1/3;}
+
+h1 {
+    margin-top: 12vw;
+    margin-bottom: 120px;
+    font-size: 3vw;
+}
+
+.page{
+    margin-left: -10px;
+    padding: 30px;
+    font-family: 'NanumBarunGothic';
+}
+
+
+.layout{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+
+.layout_r{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.layout_r3{
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.text_left{
+    text-align: left;
+    padding-left: 10%;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.text_right{
+    text-align: right;
+    padding-right: 10%;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.reservation{
+    display: block;
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+
+}
+
+.f_btn{
+    position: fixed;
+    bottom: 10vh;
+    right: 40px;
+    /* width: 10%; */
+    display: block;
+    z-index: 3;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.f_btn img{
+    width: 240px;
+}
+
+
+.meetingroom{
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-bottom: 25vw;
+    padding: 120px;
+    font-family: 'NanumBarunGothic';
+}
+
+.meetingroom .img-cover{
+    width: 28vw;
+    height: 520px;
+}
+
+.mr_img1{
+    width: 28vw;
+    height: 520px;
+    background-image: url({{ url_for('static', filename = 'image/seminar_2.png') }});
+    background-size: cover;
+    color: white;
+
+}
+
+
+
+/* .meetingroom img{
+    width: 25vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+
+
+.room_title {
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 140px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.room_discription{
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 140%;
+} 
+
+.mr_btn{
+    display: block;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mr_btn > img{
+    float: right;
+    margin-top: 60px;
+    width: 40px;
+}
+
+.fnb{
+    margin-top: 120px;
+    /* margin-bottom: 360px; */
+    margin-bottom: 25vw;
+    padding: 30px;
+}
+
+.fnb .service_title{
+    font-size: 4vw;
+}
+
+.service_subtitle{
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 16px;
+}
+
+.service_title{
+    font-family: 'NanumBarunGothic';
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-bottom: 20px;
+    /* margin-top: 60px; 나중에 픽셀 말고 제대로 가운데 정렬로 바꿀 것! */
+}
+
+.service_discription{
+    font-family: 'NanumBarunGothic';
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: medium;
+}
+
+.fnb img{
+    width: 35vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rent{
+    margin-bottom: 25vw;
+    padding: 30px;
+}
+
+.rent img{
+    width: 35vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.rent .service_title{
+    font-size: 4vw;
+}
+
+#sig_com {
+    background-color: rgb(21, 20, 22);
+    color: rgb(247, 247, 247);
+}
+
+
+.lounge{
+    margin-bottom: 25vw;
+    padding: 30px;
+}
+
+.lounge img{
+    width: 45vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lounge .text_left{
+    padding-left: 0%;
+}
+
+.storage{
+    margin-bottom: 25vw;
+    padding: 30px;
+}
+
+.storage img{
+    width: 45vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storage .text_right{
+    padding-right: 0%;
+}
+
+.btn_arrow>img{
+    height: 28px;
+    width: auto;
+}
+
+.btn_arrow{
+    border: 0px;
+    padding: 10px 0px;
+    margin-top: 40px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: rgb(42, 38, 45);
+}
+
+#str_btn{
+    width: 280px;
+    height: auto;
+    margin-top: 40px;
+    float: right;
+}
+
+/* 
+#str_btn: hover{
+    border-style: none none solid none;
+} */
+
+.map{
+    margin-bottom: 240px;
+}
+
+.map img{
+    width: 50vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 36px;
+}
+
+.info div{
+    margin-top: 10px;
+}
+
+.info a{
+    text-decoration: none;
+    color: black;
+}
+
+.image_area {
+
+}
+
+
+
+
+
+
+

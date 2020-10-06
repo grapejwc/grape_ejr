@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/inpage.css') }}">
+    <title>Grape Lounge</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input:radio[name=res_by]").click(function(){
+
+                if($("input[name=res_by]:checked").val() == "1"){
+                    document.getElementById("resinfo1").innerHTML = "예약자 성명 *"
+                    document.getElementById("resinfo2").innerHTML = "연락처 *"
+                }else if($("input[name=res_by]:checked").val() == "2"){
+                    document.getElementById("resinfo1").innerHTML = "기업명 *"
+                    document.getElementById("resinfo2").innerHTML = "담당자 연락처 *"
+                }else if($("input[name=res_by]:checked").val() == "3"){
+                    document.getElementById("resinfo1").innerHTML = "기업명 *"
+                    document.getElementById("resinfo2").innerHTML = "담당자 연락처 *"
+                }
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <!-- 상단바 -->
+        <!-- 상단바 이미지 삽입 -->
+        <div class="img" id="header">
+            <div class="img-cover">
+                <div class="layout">
+                    <div class="logo c1">
+                        <img src="{{ url_for('static', filename = 'image/logo.png') }}" alt="그레이프라운지">
+                    </div>
+                    <!-- 맨 위 내비게이션 바 -->
+                    <header class="c2 menu">
+                        <nav>
+                            <ul>
+                                <li class="menu-item"><a href="{{ url_for('home') }}">Home</a></li>
+                                <li class="menu-item"><a href="{{ url_for('meetingroom') }}">회의실</a></li>
+                                <li class="menu-item" id="now"><a href="{{ url_for('reservation') }}">예약</a></li>
+                                <li class="menu-item"><a href="{{ url_for('sig_lounge') }}">입주사 전용 공간</a></li>
+                                <li class="menu-item"><a href="https://grapelounge.co.kr/">그레이프라운지</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                </div>
+
+                <div class="page_title">
+                    <title>예약</title>
+                </div>
+            </div>
+    
+        </div>
+    </header>
+
+    <div class="side-main_layout c1">
+        <!-- 사이드 메뉴 바 -->
+        <div class="sidebar nanumbarungothic">
+            <div class="sidebar_title">
+                예약
+            </div>
+            <div>
+                <span>회의실 예약</span>
+            </div>
+        </div>
+    
+        <!-- 중앙 콘텐츠 -->
+        <main class="c2 nanumbarungothic">
+            <h1 class="r1">회의실 예약</h1>
+            
+            <!-- 예약자 정보 -->
+            <div class="r2 layout_r" style="padding: 20px 80px; margin-top: 80px;">
+                <div class="r1 res_what">
+                    <div>
+                        예약자 정보
+                    </div>
+                    <div style="float: right; font-weight: lighter; font-size: 16px;">
+                        * 필수입력
+                    </div>
+                </div>
+                <div class="r2">
+                    <input type="radio" name="res_by" id="res_by_r1" value="1" checked><label for="res_by_r1" class="input_label">개인</label>
+                    <input type="radio" name="res_by" id="res_by_r2" value="2" onclick=""><label for="res_by_r2" class="input_label">기업</label>
+                    <input type="radio" name="res_by" id="res_by_r3" value="3"><label for="res_by_r3" class="input_label">시그니쳐타워 입주사</label>
+                </div>
+                <div class="r3 layout_c3">
+                    <div class="c1 layout">
+                        <div class="r1 resinfo" id="resinfo1">예약자 성명 *</div>
+                        <input type="text" name="user_name" id="user_name" class="r1 resinfo_input" id="resinfo_input1">
+    
+                        <div class="r2 resinfo" id="resinfo2">연락처 *</div>
+                        <input type="text" name="user_num" id="user_num" class="r2 resinfo_input" id="resinfo_input2">
+
+                    </div>
+                </div>
+                <div class="r4">
+                    <a href="{{ url_for('meetingroom') }}">
+                        <img class="res_more" src="{{ url_for('static', filename = 'image/res_more.png') }}" alt="회의실 상세 보기">
+                    </a>
+                    <!-- <span>회의실 상세 보기</span>
+                    <img src="./images/right_arw.png" alt="회의실 상세 보기" style="width: 10px; border: 1px solid black;"> -->
+                </div>
+
+            </div>
+            
+            <!-- 날짜 선택 -->
+            <div class="r3 layout_r" style="padding: 20px 80px;">
+                <div class="r1 res_what">
+                    <div>
+                        냘짜 선택
+                    </div>
+                    <div style="float: right;">
+                        9월 15일 화요일
+                    </div>
+                </div>
+                <div style="border: 1px solid black; padding: 120px; margin-top: 24px;">
+                    달력
+                </div>
+
+            </div>
+
+            <!-- 시간 선택 -->
+            <div class="r4 layout_r" style="padding: 20px 80px;">
+                <div class="r1 res_what">
+                    <div>
+                        시간 선택
+                    </div>
+                    <div style="float: right;">
+                        14:00~20:00, 6시간 (주간 4시간 + 야간 2시간)
+                    </div>
+                </div>
+                <div class="r2 time">
+                    <span>주간</span>
+                    <div class="time_select">09:00</div>
+                    <div class="time_select">09:30</div>
+                    <div class="time_select">10:00</div>
+                    <div class="time_select">10:30</div>
+                    <div class="time_select">11:00</div>
+                    <div class="time_select">11:30</div>
+                    <div class="time_select">12:00</div>
+                    <div class="time_select">12:30</div>
+                    <div class="time_select">13:00</div>
+                    <div class="time_select">13:30</div>
+                    <div class="time_select">14:00</div>
+                    <div class="time_select">14:30</div>
+                    <div class="time_select">15:00</div>
+                    <div class="time_select">15:30</div>
+                    <div class="time_select">16:00</div>
+                    <div class="time_select">16:30</div>
+                    <div class="time_select">17:00</div>
+                    <div class="time_select">17:30</div>
+                    
+                </div>
+                <div class="r3 time">
+                    <span>야간</span>
+                    <div class="time_select">18:00</div>
+                    <div class="time_select">18:30</div>
+                    <div class="time_select">19:00</div>
+                    <div class="time_select">19:30</div>
+                    <div class="time_select">20:00</div>
+                    <div class="time_select">20:30</div>
+                    <div class="time_select">21:00</div>
+                    <div class="time_select">21:30</div>
+                </div>
+
+            </div>
+
+            <!-- 인원 선택 -->
+            <div class="r5 layout_r" style="padding: 20px 80px;">
+                <div class="r1 res_what">
+                    <div>
+                        인원 선택
+                    </div>
+                    <div style="float: right;">
+                        14:00~20:00, 6시간 (주간 4시간 + 야간 2시간)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 다음 단계 -->
+            <div class="r6">
+
+            </div>
+            
+        </main>
+    </div>
+
+
+
+</body>
+</html>

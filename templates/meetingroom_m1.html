@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/inpage.css') }}">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        // 전환 버튼
+        function mtr_cng_mid1() {
+            // 선택한 회의실 css 바꿈
+            $("#mtr_mid1").css('border-bottom', '2px solid black');
+            $("#mtr_mid1").css('font-weight', 'normal');
+            $("#mtr_mid1").css('padding-bottom', '11px');
+
+            // 내용 전환
+            document.getElementById("discription").innerHTML = "25명 수용가능한 미팅룸입니다. 중규모 모임을 위한 룸으로 공간 활용도가 높습니다.";
+
+            // 선택하지 않은 회의실 css 리셋
+            $("#mtr_mid2").css('border', 'none');
+            $("#mtr_mid2").css('font-weight', '100');
+
+            // 표 배경색 바꿈
+            $("#tr_mid1").css('background-color', 'rgb(255, 194, 194)');
+            $("#tr_mid2").css('background-color', '#ffffff');
+
+            $(".td_sch_1").css('font-weight', 'bold');
+            $(".td_sch_2").css('font-weight', 'normal');
+
+        }
+
+        function mtr_cng_mid2() {
+            $("#mtr_mid2").css('border-bottom', '2px solid black');
+            $("#mtr_mid2").css('font-weight', 'normal');
+            $("#mtr_mid2").css('padding-bottom', '11px');
+
+            document.getElementById("discription").innerHTML = "15명 수용가능한 미팅룸입니다. 룸을 빙 두르고 있는 화이트보드가 인상적입니다.";
+
+            $("#mtr_mid1").css('border', 'none');
+            $("#mtr_mid1").css('font-weight', '100');
+
+            $("#tr_mid2").css('background-color', 'rgb(255, 194, 194)');
+            $("#tr_mid1").css('background-color', '#ffffff');
+
+            $(".td_sch_1").css('font-weight', 'normal');
+            $(".td_sch_2").css('font-weight', 'bold');
+
+        }
+    </script>
+    <!-- <script src="./main.js"></script> -->
+    <title>Grape Lounge</title>
+</head>
+<body>
+    <header>
+        <!-- 상단바 -->
+        <!-- 상단바 이미지 삽입 -->
+        <div class="img" id="header">
+            <div class="img-cover">
+                <div class="layout">
+                    <div class="logo c1">
+                        <img src="{{ url_for('static', filename = 'image/logo.png') }}" alt="그레이프라운지">
+                    </div>
+                    <!-- 맨 위 내비게이션 바 -->
+                    <header class="c2 menu">
+                        <nav>
+                            <ul>
+                                <li class="menu-item"><a href="{{ url_for('home') }}">Home</a></li>
+                                <li class="menu-item" id="now"><a href="{{ url_for('meetingroom') }}">회의실</a></li>
+                                <li class="menu-item"><a href="{{ url_for('reservation') }}">예약</a></li>
+                                <li class="menu-item"><a href="{{ url_for('sig_lounge') }}">입주사 전용 공간</a></li>
+                                <li class="menu-item"><a href="https://grapelounge.co.kr/">그레이프라운지</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                </div>
+                <!-- <div class="page_title">
+                    <title class="page_title">회의실</title>
+                </div> -->
+                <div class="page_title">
+                    <title>회의실</title>
+                </div>
+            </div>
+    
+        </div>
+    </header>
+
+    <div class="side-main_layout c1">
+        <!-- 사이드 메뉴 바 -->
+        <div class="sidebar nanumbarungothic">
+            <div class="sidebar_title">
+                회의실
+            </div>
+            <div>
+                <span><a href="{{ url_for('meetingroom') }}">세미나룸</a></span>
+            </div>
+            <div>
+                <span><a href="{{ url_for('meetingroom_m1') }}">중회의실</a></span>
+            </div>
+            <div>
+                <span><a href="{{ url_for('meetingroom_sm1') }}">소회의실</a></span>
+            </div>
+        </div>
+    
+        <!-- 중앙 콘텐츠 -->
+        <main class="c2 layout_r nanumbarungothic">
+            <h1 class="r1">중회의실</h1>
+            <!-- 회의실 전환 버튼 -->
+            <div class="r2 layout">
+                <div class="c1"></div>
+                <ul class="room_btns c2_5">
+                    <!-- <li id="#mtr_mid1"><a href="meetingroom_m1.html">중회의실 1</a></li>
+                    <li id="#mtr_mid2"><a href="meetingroom_m2.html">중회의실 2</a></li> -->
+                    <li class="room_now" id="mtr_mid1" onclick="mtr_cng_mid1();" style="font-weight: normal;">중회의실 1</li>
+                    <li id="mtr_mid2" onclick="mtr_cng_mid2();">중회의실 2</li>
+                </ul>
+                <div class="c5"></div>
+            </div>
+            <div class="r3 room_img">
+                <img src="{{ url_for('static', filename = 'image/imagearea.png') }}" alt="">
+            </div>
+            <div class="r4">
+                <p class="discription" id="discription">25명 수용가능한 미팅룸입니다. 중규모 모임을 위한 룸으로 공간 활용도가 높습니다. </p>
+            </div>
+            
+            <!-- 예약하러 가기 버튼 -->
+            <div class="res_btn r5">
+                <a href="{{ url_for('reservation') }}"><img src="{{ url_for('static', filename = 'image/res_btn.png') }}" alt="예약"></a>
+            </div>
+
+            <!-- 표 -->
+            <table class="r6 mtr_table">
+                <thead>
+                    <tr>
+                        <th>회의실</th>
+                        <th>기준 인원</th>
+                        <th>구비 품목</th>
+                        <th>대여 가능 품목</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr_now" id="tr_mid1">
+                        <td>중회의실 1</td>
+                        <td>
+                            <div class="td_sch_1">
+                                스쿨식 25명
+                            </div>
+                            <div class="td_minmax">
+                                최소 20명 ~ 최대 30명
+                            </div>
+                        </td>
+                        <td>
+                            <ul style="list-style-type: '- '; text-align: left;">
+                                <li>빔 프로젝터</li>
+                                <li>전동 스크린</li>
+                                <li>벽면 글라스보드</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul style="list-style-type: '- '; text-align: left;">
+                                <li>연설대</li>
+                                <li>앰프(마이크)</li>
+                                <li>마이크 스탠드</li>
+                                <li>레이져 포인터</li>
+                            </ul>                            
+                        </td>
+                    </tr>
+                    <tr id="tr_mid2">
+                        <td>중회의실 2</td>
+                        <td>
+                            <div class="td_sch_2">
+                                스쿨식 15명
+                            </div>
+                            <div class="td_minmax">
+                                최소 12명 ~ 최대 19명
+                            </div>
+                        </td>
+                        <td>
+                            <ul style="list-style-type: '- '; text-align: left;">
+                                <li>벽면 글라스보드</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul style="list-style-type: '- '; text-align: left;">
+                                <li>빔 프로젝터</li>
+                            </ul>                            
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            
+            
+        </main>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Grape Lounge</title>
+</head>
+<body>
+    <header>
+        <!-- 배경 이미지 삽입 -->
+        <div class="img">
+            <!-- 배경 이미지 위 검정 박스 삽입 -->
+            <div class="img-cover">
+                <!-- 맨 위 내비게이션 바 -->
+                <header class="menu"> 
+                    <nav>
+                        <ul>
+                            <li class="menu-item" id="now"><a href="{{ url_for('home') }}">Home</a></li>
+                            <li class="menu-item"><a href="{{ url_for('meetingroom') }}">회의실</a></li>
+                            <li class="menu-item"><a href="{{ url_for('reservation') }}">예약</a></li>
+                            <li class="menu-item"><a href="{{ url_for('sig_lounge') }}">입주사 전용 공간</a></li>
+                            <li class="menu-item"><a href="https://grapelounge.co.kr/">그레이프라운지</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            
+                <!-- 첫번째 페이지 영역 -->
+                <div class="firstPage"> 
+                    <!-- 로고이미지 + 을지로 -->
+                    <div class="mainlogo"> 
+                        <img src="{{ url_for('static', filename = 'image/ujr_logo.png') }}" alt="그레이프라운지 로고" class="mainlogo">
+                    </div>
+    
+            </div>
+        </div>
+    </header>
+
+    <!-- 예약 플로팅 버튼 -->
+    <div class="f_btn">
+        <a href="{{ url_for('reservation') }}"><img src="{{ url_for('static', filename = 'image/res_btn.png') }}" alt="예약"></a>
+    </div>
+
+    <!-- 회의실 영역 -->
+    <div class="meetingroom layout">
+        <h1 class="text_center c2">회의실</h1>
+        <!-- 회의실 안에 그리드 넣기 -->
+        <!-- 첫번째 칸-->
+        <!-- 첫번째 회의실 칸에 이미지 삽입 -->
+        <div class="c1 mr_img1"> 
+            <a href="{{ url_for('meetingroom') }}">
+                <div class="img-cover layout_r3">
+                    <div class="r1 room_title">세미나룸 1, 2</div>
+                    <div class="r2 room_discription">30명~60명 규모의 인원을 수용할 수 있는 공간입니다.
+                        세미나실 1, 2를 합쳐 100명까지의 인원을 위한 공간으로도 활용할 수 있습니다.
+                    </div>
+                    <div class="r3">
+                        <div class="mr_btn">
+                            <img src="{{ url_for('static', filename = 'image/depth_right_arw_w.png') }}" alt="회의실 보러 가기">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <!-- 두번째 칸 -->
+        <div class="c2 mr_img1">
+            <a href="{{ url_for('meetingroom_m1') }}">
+                <div class="img-cover layout_r3">
+                    <div class="r1 room_title">중회의실 1, 2</div>
+                    <div class="r2 room_discription">15명~25명 규모의 회의실로 활용할 수 있는 공간입니다.
+                    </div>
+                    <div class="r3 mr_btn">
+                        <img src="{{ url_for('static', filename = 'image/depth_right_arw_w.png') }}" alt="회의실 보러 가기">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 세번째 칸 -->
+        <div class="c3 mr_img1">
+            <a href="{{ url_for('meetingroom_sm1') }}">
+                <div class="img-cover layout_r3">
+                    <div class="r1 room_title">소회의실 1, 2, 3</div>
+                    <div class="r2 room_discription">5명~12명 정도의 소규모 회의를 진행할 수 있는 공간입니다.
+                    </div>
+                    <div class="r3 mr_btn">
+                        <img src="{{ url_for('static', filename = 'image/depth_right_arw_w.png') }}" alt="회의실 보러 가기">
+                    </div>
+                </div>
+            </a>
+        </div>
+            
+
+        
+    </div>
+
+    <!-- 서비스 영역 -->
+    <div>
+        <h1 class="text_center c2">이용 서비스</h1>
+        <div class="page">
+            <!-- f&b 딜리버리 서비스 영역 -->
+            <div class="fnb clearfix layout">
+                <!-- 텍스트 영역 (왼쪽) -->
+                <div class="text_left c1">
+                    <div class="service_title r1">
+                        그레이프라운지만의 <br>F&B 딜리버리 서비스
+                    </div>
+                    <div class="service_discription r2">
+                        원하시는 메뉴를 주문해주세요! <br>그레이프라운지에서 회의장까지 딜리버리 해드립니다.<br>메뉴판을 참고해주세요.
+                    </div>
+                </div>
+                <!-- 이미지 영역 (오른쪽) -->
+                <div class="c2">
+                    <img src="{{ url_for('static', filename = 'image/circle.png') }}" alt="F&B 딜리버리 서비스">
+                </div>
+            </div>
+    
+            <!-- 회의물품 대여 서비스 영역 -->
+            <div class="rent clearfix layout"> 
+                <!-- 이미지 영역 (왼쪽) -->
+                <div class="c1">
+                    <img src="{{ url_for('static', filename = 'image/circle.png') }}" alt="F&B 딜리버리 서비스">
+                </div>
+                <!-- 텍스트 영역 (오른쪽) -->
+                <div class="text_right c2">
+                    <div class="service_title">
+                        회의 필수 물품 <br>일절 구비 및 대여 가능
+                    </div>
+                    <div class="service_discription">
+                        프로젝터, 전동 스크린, 레이저포인터, 마이크, 앰프, 연설대<br>벽면 글라스보드, 케이블, POP 스탠드 등이 구비되어 있습니다.<br>기타 필요 품목은 리셉션에 문의해 주세요!
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <!-- 입주사 전용 라운지 스토리지 영역 -->
+    <div class="page" id="sig_com">
+        <h1 class="text_center">입주사 전용 Lounge & Storage</h1>
+        <!-- 라운지 영역 -->
+        <div class="lounge clearfix layout">
+            <!-- 이미지 영역 (왼쪽 column) -->
+            <div class="service_img c1">
+                <img src="{{ url_for('static', filename = 'image/imagearea.png') }}" alt="image area">
+            </div>
+            <!-- 텍스트 영역 (오른쪽 column) -->
+            <div class="text_left c2">
+                <!-- row 4개 만들어서 콘텐츠 넣음 -->
+                <div class="service_subtitle r1">
+                    당신의 시간이 조금 더 편안해지도록
+                </div>
+                <div class="service_title r2">
+                    시그니쳐타워 입주사를 위한 <br>전용 Lounge
+                </div>
+                <div class="service_discription r3">
+                    간단히 점심을 먹을 때, 커피를 마실 때, 잠깐 휴식이 필요할 때.
+                    <br>언제든 들러서 편하게 시간을 보내실 수 있도록
+                    <br>시그니쳐타워 입주사분들께 라운지의 문을 열어두겠습니다.
+                </div>
+                <div class="r4">
+                    <button class="btn_arrow">
+                        <img src="{{ url_for('static', filename = 'image/left_arw_w.png') }}" alt="이전 사진">
+                    </button>
+                    <button class="btn_arrow">
+                        <img src="{{ url_for('static', filename = 'image/right_arw_w.png') }}" alt="다음 사진">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 스토리지 영역 -->
+        <div class="storage clearfix layout">
+            <!-- 텍스트 영역 (왼쪽 column) -->
+            <div class="text_right c1">
+                <!-- row 4개 만들어서 콘텐츠 넣음 -->
+                <div class="service_subtitle r1">
+                    가벼움이 필요한 당신에게
+                </div>
+                <div class="service_title r2">
+                    시그니쳐타워 입주사를 위한 <br>전용 Storage
+                </div>
+                <div class="service_discription r3">
+                    보관이 필요하지만 사무실에 두기 어려운 짐들,
+                    <br>이제 그레이프라운지에서 무료로 보관하세요!
+                    <br>입주사분들만을 위한 전용 Storage가 준비되어 있습니다.
+                </div>
+                <div class="r4">
+                    <button class="btn_arrow">
+                        <img src="{{ url_for('static', filename = 'image/left_arw_w.png') }}" alt="이전 사진">
+                    </button>
+                    <button class="btn_arrow">
+                        <img src="{{ url_for('static', filename = 'image/right_arw_w.png') }}" alt="다음 사진">
+                    </button>
+                </div>
+                <div class="r5">
+                    <a href="{{ url_for('sig_storage') }}"><img id="str_btn" src="{{ url_for('static', filename = 'image/storage_btn.png') }}" alt="스토리지 신청"></a>
+                </div>
+            </div>
+            <!-- 이미지 영역 (오른쪽 column) -->
+            <div class="c2">
+                <img src="{{ url_for('static', filename = 'image/imagearea.png') }}" alt="image area">
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- 위치 표시 영역 -->
+    <div class="page layout map">
+        <h1 class="text_center c2">위치</h1>
+        <!-- 그리드 세 부분으로 나눔 -->
+        <div class="c1"></div>
+        <div class="c2">
+            <!-- 두번째 그리드를 두 부분으로 나눔. 위: 맵 / 아래: 텍스트 -->
+            <!-- 맵 영역 (지금은 이미지로 넣어둠) -->
+            <div class="r1">
+                <img src="{{ url_for('static', filename = 'image/imagearea.png') }}" alt="map area">
+            </div>
+            <!-- 정보 영역 -->
+            <div class="r2 layout info">
+                <div class="r1 c1 text_right">주소</div>
+                <div class="r1 c2">서울 중구 청계천로 100 시그니쳐타워 B1 (수표동 99)</div>
+                <div class="r2 c1 text_right">연락처</div>
+                <div class="r2 c2">02-6403-3268</div>
+                <div class="r3 c1 text_right">홈페이지</div>
+                <div class="r3 c2">
+                    <a href="www.grapelounge-ejr.co.kr">www.grapelounge-ejr.co.kr</a>
+                </div>
+            </div>
+        </div>
+        <div class="c3"></div>
+    </div>
+    
+</body>
+</html>
